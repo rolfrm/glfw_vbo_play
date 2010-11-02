@@ -1,0 +1,22 @@
+attribute vec4 vertexPosition;
+attribute vec2 UVCoord;
+attribute vec4 normalVector;
+varying vec2 texCoord;
+uniform mat4x4 modelMatrix;
+uniform mat4x4 cameraMatrix;
+uniform mat4x4 colorMatrix;
+uniform mat4x4 light0;
+varying vec3 normal;
+varying vec4 eye;
+varying float diffuseAtt;
+varying vec3 lightVec;
+void main(){
+	vec3 lightDir;
+	float NdotL;
+	normal = vec3(0,0,-1);
+	
+	vec4 globalPosition = modelMatrix*vertexPosition;
+	gl_Position = cameraMatrix*globalPosition;
+	texCoord =UVCoord;
+	lightVec = vec3(globalPosition) -	vec3(light0[3]);
+}
