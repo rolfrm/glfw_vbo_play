@@ -104,7 +104,7 @@ int main() {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		t +=0.1;
 		//t2.rotate(0,0,0.1);
-		lt1.translate(0,0,-0.1 );
+		lt1.translate(0,0,-0.1);
 		m1.setColor(material::DIFFUSE,0.5 + sin(t)*0.5,0.5 + cos(t)*0.5,cos(t*3)*0.5,1);
 		root.traverse(sceneGraph::UPDATE);
 		graphics::end();
